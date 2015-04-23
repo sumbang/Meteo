@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Meteo</string>
+    <string name="refresh">Rafraichir les donnees</string>
+    <string name="action_settings">A propos</string>
+    <string name="city">Ajouter une ville</string>
+    <string name="citytitle">Nom de la ville</string>
+    <string name="addcity">Ajouter</string>
+    <string name="cancelcity">Annuler</string>
+    <string name="success">Ville ajoutee avec success</string>
+    <string name="option1">Rafraichir</string>
+    <string name="option2">Mettre en avant plan</string>
+    <string name="option3">Modifier</string>
+    <string name="option4">Supprimer</string>
+    <string name="todo">Action a faire</string>
+    <string name="delete">Suppression reussie</string>
+    <string name="update">Modification reussie</string>
+    <string name="start">Lancement, veuillez patienter</string>
+    <string name="finish">Mise a jour des donnees</string>
+    <string name="error">Erreur de connexion</string>
+
+
+
+</resources>
