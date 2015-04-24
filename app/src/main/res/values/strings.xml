@@ -2,24 +2,24 @@
 <resources>
 
     <string name="app_name">Meteo</string>
-    <string name="refresh">Rafraichir les donnees</string>
-    <string name="action_settings">A propos</string>
-    <string name="city">Ajouter une ville</string>
-    <string name="citytitle">Nom de la ville</string>
-    <string name="addcity">Ajouter</string>
-    <string name="cancelcity">Annuler</string>
-    <string name="success">Ville ajoutee avec success</string>
-    <string name="option1">Rafraichir</string>
-    <string name="option2">Mettre en avant plan</string>
-    <string name="option3">Modifier</string>
-    <string name="option4">Supprimer</string>
-    <string name="todo">Action a faire</string>
-    <string name="delete">Suppression reussie</string>
-    <string name="update">Modification reussie</string>
-    <string name="start">Lancement, veuillez patienter</string>
-    <string name="finish">Mise a jour des donnees</string>
-    <string name="error">Erreur de connexion</string>
-
+    <string name="refresh">Refresh Data</string>
+    <string name="action_settings">About</string>
+    <string name="city">Add a city</string>
+    <string name="citytitle">Name of city</string>
+    <string name="addcity">Add</string>
+    <string name="cancelcity">Cancel</string>
+    <string name="success">City added successfull</string>
+    <string name="option1">Refresh</string>
+    <string name="option2">Put in the top</string>
+    <string name="option3">Update</string>
+    <string name="option4">Delete</string>
+    <string name="todo">Action to do</string>
+    <string name="delete">Delete successfull</string>
+    <string name="update">Update Successfull</string>
+    <string name="start">Starting, please wait</string>
+    <string name="finish">Update Data</string>
+    <string name="error">Error of connexion</string>
+    <string name="about">Meteo is a free project launch by me,SUMBANG CHRISTIAN BAUREL. The goal is help people who want to build weather apps. For more about me, follow this link : http://glieunou.biz</string>
 
 
 </resources>

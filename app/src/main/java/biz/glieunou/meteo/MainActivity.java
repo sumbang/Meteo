@@ -1,5 +1,6 @@
 package biz.glieunou.meteo;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.net.ParseException;
@@ -43,6 +44,8 @@ public class MainActivity extends ActionBarActivity {
     private  ArrayList<HashMap<String,String>> listItem;
 
     private TextView date,temp,variation,vent,ville; private ImageView nuage;
+
+    private static final int CODE_ACTIVITE=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,7 +134,7 @@ public class MainActivity extends ActionBarActivity {
 
                     // lancement des operations pour l'item selectionnee
 
-                    Fenetre dialog1 = new Fenetre(Integer.parseInt(map1.get("key")));
+                    Fenetre dialog1 = Fenetre.newInstance(Integer.parseInt(map1.get("key")));
 
                     FragmentManager manager=getSupportFragmentManager();
 
@@ -146,6 +149,8 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+
+    // function that refresh only the listview items
 
     public void refreshdata(){
 
@@ -194,6 +199,8 @@ public class MainActivity extends ActionBarActivity {
 
         }
 
+    // function that refresh only the top section
+
     public void refreshTop(){
 
         final Query req2 = new Query(this);
@@ -232,6 +239,11 @@ public class MainActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+
+            Intent intent=new Intent(MainActivity.this,About.class);
+
+            startActivityForResult(intent,CODE_ACTIVITE);
+
             return true;
         }
 
@@ -248,7 +260,9 @@ public class MainActivity extends ActionBarActivity {
 
         else if(id == R.id.city){
 
-            DialogFragment dialog = new City(0);
+            DialogFragment dialog = City.newInstance(0);
+
+           // DialogFragment dialog = new City(0);
 
             dialog.show(getSupportFragmentManager(), "dialog1");
 

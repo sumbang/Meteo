@@ -28,10 +28,17 @@ public class Fenetre extends DialogFragment {
 
     public int cle; private static final int CODE_ACTIVITE=5;
 
-    @SuppressLint("ValidFragment")
-    public Fenetre(int choix){
+    // default constructor of Fragment
 
-        cle=choix;
+    public static Fenetre newInstance(int someInt) {
+
+        Fenetre myFragment = new Fenetre();
+
+        Bundle args = new Bundle();
+        args.putInt("cle", someInt);
+        myFragment.setArguments(args);
+
+        return myFragment;
     }
 
     @Override
@@ -88,7 +95,7 @@ public class Fenetre extends DialogFragment {
 
                         } else if (action == 1) {
 
-                            DialogFragment dialog2 = new City(cle);
+                            DialogFragment dialog2 = City.newInstance(getArguments().getInt("cle"));
 
                             dialog2.show(getActivity().getSupportFragmentManager(), "dialog3");
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Meteo</string>
+    <string name="refresh">Rafraichir les donnees</string>
+    <string name="action_settings">A propos</string>
+    <string name="city">Ajouter une ville</string>
+    <string name="citytitle">Nom de la ville</string>
+    <string name="addcity">Ajouter</string>
+    <string name="cancelcity">Annuler</string>
+    <string name="success">Ville ajoutee avec success</string>
+    <string name="option1">Rafraichir</string>
+    <string name="option2">Mettre en avant plan</string>
+    <string name="option3">Modifier</string>
+    <string name="option4">Supprimer</string>
+    <string name="todo">Action a faire</string>
+    <string name="delete">Suppression reussie</string>
+    <string name="update">Modification reussie</string>
+    <string name="start">Lancement, veuillez patienter</string>
+    <string name="finish">Mise a jour des donnees</string>
+    <string name="error">Erreur de connexion</string>
+    <string name="about">Meteo est un projet libre lance par moi, SUMBANG CHRISTIAN BAUREL. Le but de ce projet est d\'aider tout ceux et celle qui voudront implementer une apps de meteo. Pour en savoir plus, rendez-vous ici : http://glieunou.biz</string>
+
+</resources>

@@ -20,11 +20,19 @@ public class City extends DialogFragment {
 
     public int cle; private static final int CODE_ACTIVITE=5;
 
-    public City(int val){
+    // default constructor of Fragment
 
-        cle=val;
+    public static City newInstance(int someInt) {
 
+        City myFragment = new City();
+
+        Bundle args = new Bundle();
+        args.putInt("cle", someInt);
+        myFragment.setArguments(args);
+
+        return myFragment;
     }
+
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -38,7 +46,7 @@ public class City extends DialogFragment {
 
         final View dialogview=inflater.inflate(R.layout.city, null);
 
-        String textbt;
+        String textbt; cle=getArguments().getInt("cle");
 
         if(cle!=0){
 
