@@ -1,55 +1,55 @@
 # Meteo
 
-Application Android native (Java) de **météo par ville**, publiée comme projet libre et pédagogique : elle sert d'exemple à celles et ceux qui souhaitent réaliser leur propre application météo. L'utilisateur enregistre une liste de villes et consulte, pour chacune, la température, la vitesse du vent et une description du temps, récupérées depuis l'API publique OpenWeatherMap.
+Native Android (Java) **per-city weather** app, released as a free, educational project: it serves as an example for anyone who wants to build their own weather app. The user saves a list of cities and views, for each one, the temperature, wind speed and a weather description, fetched from the public OpenWeatherMap API.
 
-## Fonctionnalités principales
+## Main features
 
-- **Ajout d'une ville** par son nom (boîte de dialogue).
-- **Liste des villes** enregistrées, avec mise en avant d'une ville principale affichée en haut de l'écran (température, vent, description, date du jour, icône du temps).
-- Actions sur une ville : **rafraîchir** ses données, la **mettre en avant**, la **modifier** ou la **supprimer**.
-- **Rafraîchissement** des données météo via l'API OpenWeatherMap (`/data/2.5/weather?q=<ville>`) ; conversion de la température de Kelvin en degrés Celsius.
-- **Stockage local** des villes et de leurs dernières données météo dans une base SQLite (`weather.db`, table `ville`).
-- Écran « À propos ».
-- Interface en anglais et en français (`res/values`, `res/values-fr`).
+- **Add a city** by name (dialog box).
+- **List of saved cities**, with a featured main city shown at the top of the screen (temperature, wind, description, current date, weather icon).
+- Actions on a city: **refresh** its data, **feature** it, **edit** it or **delete** it.
+- **Refreshing** weather data through the OpenWeatherMap API (`/data/2.5/weather?q=<city>`); conversion of the temperature from Kelvin to degrees Celsius.
+- **Local storage** of cities and their latest weather data in a SQLite database (`weather.db`, `ville` table).
+- "About" screen.
+- English and French interface (`res/values`, `res/values-fr`).
 
-## Stack technique
+## Tech stack
 
-- **Java** / SDK Android (compileSdk et targetSdk 22, minSdk 9)
-- Bibliothèque `com.android.support:appcompat-v7:22.0.0`
-- Android Gradle Plugin 1.0.0, Gradle 2.2.1 (wrapper fourni)
-- SQLite (`SQLiteOpenHelper`), `HttpURLConnection` + `AsyncTask` pour les appels réseau, `org.json` pour l'analyse des réponses
-- Projet Android Studio (`Meteo.iml`, `.idea/`)
+- **Java** / Android SDK (compileSdk and targetSdk 22, minSdk 9)
+- `com.android.support:appcompat-v7:22.0.0` library
+- Android Gradle Plugin 1.0.0, Gradle 2.2.1 (wrapper included)
+- SQLite (`SQLiteOpenHelper`), `HttpURLConnection` + `AsyncTask` for network calls, `org.json` for parsing responses
+- Android Studio project (`Meteo.iml`, `.idea/`)
 
-## Structure du projet
+## Project structure
 
 ```
 app/src/main/
-├── AndroidManifest.xml               # Activités (principale, À propos) et permissions (INTERNET, VIBRATE)
+├── AndroidManifest.xml               # Activities (main, About) and permissions (INTERNET, VIBRATE)
 ├── java/biz/glieunou/meteo/
-│   ├── MainActivity.java             # Écran principal : ville mise en avant, liste, appels à l'API météo
-│   ├── City.java                     # Boîte de dialogue d'ajout d'une ville
-│   ├── Fenetre.java                  # Boîte de dialogue des actions sur une ville
-│   ├── About.java                    # Écran « À propos »
-│   ├── Ville.java                    # Modèle de données d'une ville
-│   ├── Database.java                 # Création / mise à jour de la base SQLite
-│   └── Query.java                    # Accès aux données (CRUD des villes)
-└── res/                              # Layouts, menus, chaînes (en / fr), images
-build.gradle, settings.gradle         # Configuration Gradle
-gradlew, gradlew.bat, gradle/         # Wrapper Gradle
+│   ├── MainActivity.java             # Main screen: featured city, list, weather API calls
+│   ├── City.java                     # Dialog box for adding a city
+│   ├── Fenetre.java                  # Dialog box for actions on a city
+│   ├── About.java                    # "About" screen
+│   ├── Ville.java                    # City data model
+│   ├── Database.java                 # SQLite database creation / upgrade
+│   └── Query.java                    # Data access (city CRUD)
+└── res/                              # Layouts, menus, strings (en / fr), images
+build.gradle, settings.gradle         # Gradle configuration
+gradlew, gradlew.bat, gradle/         # Gradle wrapper
 ```
 
-## Installation et lancement
+## Installation and running
 
-Le projet utilise des versions anciennes de l'outillage Android (Gradle 2.2.1, Android Gradle Plugin 1.0.0, build-tools 22.0.1) : il faut un JDK et un SDK Android compatibles (ou mettre à jour ces versions).
+The project uses old versions of the Android tooling (Gradle 2.2.1, Android Gradle Plugin 1.0.0, build-tools 22.0.1): you need a compatible JDK and Android SDK (or upgrade these versions).
 
-- Ouvrir le dossier du projet dans Android Studio, puis lancer l'application sur un émulateur ou un appareil.
-- Ou en ligne de commande :
+- Open the project folder in Android Studio, then run the app on an emulator or a device.
+- Or from the command line:
 
   ```bash
-  ./gradlew assembleDebug      # génère app/build/outputs/apk/
-  ./gradlew installDebug       # installe sur un appareil connecté
+  ./gradlew assembleDebug      # generates app/build/outputs/apk/
+  ./gradlew installDebug       # installs on a connected device
   ```
 
 ## Configuration
 
-Aucun fichier `.env` n'est utilisé. L'URL de l'API OpenWeatherMap est définie dans `MainActivity.java` (constante `BASEURL`). L'API OpenWeatherMap exige désormais une clé d'API (paramètre `appid`) : ajoutez-la à la requête si nécessaire. Le chemin du SDK Android se renseigne dans `local.properties` (`sdk.dir`), fichier non versionné.
+No `.env` file is used. The OpenWeatherMap API URL is defined in `MainActivity.java` (`BASEURL` constant). The OpenWeatherMap API now requires an API key (`appid` parameter): add it to the request if needed. The Android SDK path is set in `local.properties` (`sdk.dir`), a file not tracked by Git.
